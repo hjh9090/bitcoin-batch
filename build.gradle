@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version  '3.4.9'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.kkachisan.batch'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral();
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    // 8.0.20버전은 앞에 com. 이 들어가지 않는다.
+    runtimeOnly 'mysql:mysql-connector-java:8.0.20'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+//test {
+//    useJUnitPlatform()
+//}
